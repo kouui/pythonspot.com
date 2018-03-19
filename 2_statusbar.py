@@ -2,19 +2,19 @@
 """
 https://pythonspot.com/en/pyqt5/
 
-1. PyQt5 window
+2. PyQt5 statusbar
 """
 
 import sys
-from PyQt5.QtWidgets import QApplication, QWidget
+from PyQt5.QtWidgets import QApplication, QWidget, QMainWindow
 from PyQt5.QtGui import QIcon
 
-class App(QWidget):
+class App(QMainWindow):
 
     def __init__(self):
         super().__init__()
 
-        self.title = "PyQt5 simple window"
+        self.title = "PyQt5"
         self.left = 10
         self.top = 10
         self.width = 640
@@ -26,6 +26,9 @@ class App(QWidget):
 
         self.setWindowTitle(self.title)
         self.setGeometry(self.left,self.top,self.width,self.height)
+
+        # add statusbar
+        self.statusBar().showMessage("message from statusbar!")
 
         self.show()
 
